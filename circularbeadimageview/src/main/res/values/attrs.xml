@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--自定义圆角imageView-->
+    <declare-styleable name="CircularBeadImageView">
+        <!--        是否显示为圆形（默认为矩形）-->
+        <attr name="is_circle" format="boolean" />
+        <!--        边框，inner_border是否覆盖图片内容-->
+        <attr name="is_cover_src" format="boolean" />
+        <!--        统一设置四个角的圆角半径-->
+        <attr name="corner_radius" format="dimension" />
+        <!--        左上角圆角半径-->
+        <attr name="corner_top_left_radius" format="dimension" />
+        <!--        右上角圆角半径-->
+        <attr name="corner_top_right_radius" format="dimension" />
+        <!--        左下角圆角半径-->
+        <attr name="corner_bottom_left_radius" format="dimension" />
+        <!--        右下角圆角半径-->
+        <attr name="corner_bottom_right_radius" format="dimension" />
+        <!--        边框宽度-->
+        <attr name="border_width" format="dimension" />
+        <!--        边框颜色-->
+        <attr name="border_color" format="color" />
+        <!--        相当于内层边框（is_circle为true时支持）-->
+        <attr name="inner_border_width" format="dimension" />
+        <!--        内边框颜色-->
+        <attr name="inner_border_color" format="color" />
+        <!--        图片上绘制的遮罩颜色-->
+        <attr name="mask_color" format="color" />
+    </declare-styleable>
+    <declare-styleable name="CircularBeadView">
+        <!--        弧度 四个角半径-->
+        <attr name="corners" format="dimension" />
+        <!--        左下角圆弧半径-->
+        <attr name="bottomLeftRadius" format="dimension" />
+        <!--        右下角圆弧半径-->
+        <attr name="bottomRightRadius" format="dimension" />
+        <!--        左上角圆弧半径-->
+        <attr name="topLeftRadius" format="dimension" />
+        <!--        右上角圆弧半径-->
+        <attr name="topRightRadius" format="dimension" />
+        <!--        边框宽度-->
+        <attr name="strokeWidth" format="dimension" />
+        <!--        边框颜色-->
+        <attr name="strokeColor" format="color" />
+        <!--        填充的颜色-->
+        <attr name="solidColor" format="color" />
+        <!--        是否是imageView-->
+        <attr name="isImageView" format="boolean" />
+    </declare-styleable>
+</resources>

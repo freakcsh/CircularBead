@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_black"
+    tools:context=".MainActivity">
+
+    <com.freak.circularbeadimageview.CircularBeadImageView
+       android:id="@+id/image1"
+        android:layout_width="40pt"
+        android:layout_height="40pt"
+        android:layout_marginLeft="5pt"
+        android:layout_marginTop="5pt"
+        app:corner_radius="5pt"
+        app:is_circle="true"
+        />
+
+    <com.freak.circularbeadimageview.CircularBeadImageView
+        android:layout_width="40pt"
+        android:layout_height="40pt"
+        android:layout_marginLeft="5pt"
+        android:layout_marginTop="5pt"
+        app:corner_radius="10pt"
+        android:src="@mipmap/ic_splash"
+        app:is_circle="true" />
+
+    <com.freak.circularbeadimageview.CircularBeadImageView
+        android:layout_width="110pt"
+        android:layout_height="110pt"
+        android:layout_marginLeft="5pt"
+        android:layout_marginTop="5pt"
+        app:corner_bottom_left_radius="5pt"
+        app:corner_bottom_right_radius="5pt"
+        app:corner_radius="10pt"
+        app:corner_top_right_radius="5pt"
+        app:is_circle="false"
+        android:src="@color/colorPrimary"
+        />
+
+    <com.freak.circularbeadimageview.CircularBeadImageView
+        android:id="@+id/image_view_collect_commodity_item_photo"
+        android:layout_width="110pt"
+        android:layout_height="110pt"
+        android:layout_marginLeft="12pt"
+        android:layout_marginTop="5pt"
+        app:corner_bottom_left_radius="5pt"
+        app:corner_top_left_radius="5pt"
+        app:corner_top_right_radius="15pt"
+        android:src="@drawable/imageqq"
+        app:is_circle="false"/>
+
+    <com.freak.circularbeadimageview.CircularBeadImageView
+        android:id="@+id/image_view_add_to_shopping_cart_bg"
+        android:layout_width="110pt"
+        android:layout_height="110pt"
+        android:layout_marginLeft="13pt"
+        android:layout_marginTop="5pt"
+        android:layout_marginBottom="14pt"
+        app:corner_radius="5dp" />
+    <com.freak.circularbeadimageview.CircularBeadView
+        android:layout_width="80pt"
+        android:layout_height="80pt"
+        android:src="@drawable/imageqq"/>
+
+</LinearLayout>

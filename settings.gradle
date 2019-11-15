@@ -1,0 +1,2 @@
+include ':app', ':circularbeadimageview'
+rootProject.name='CircularBead'
