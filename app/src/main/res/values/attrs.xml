@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    CircularBeadBitmapShaderImageView只支持四角弧度一样的弧形圆-->
+    <declare-styleable name="CircularBeadBitmapShaderImageView">
+        <!--        弧度 四个角半径-->
+        <attr name="bitmapShaderCorners" format="dimension" />
+
+    </declare-styleable>
+    <!--自定义圆角imageView 支持圆形、单独设置四角弧度、圆形边框-->
+    <declare-styleable name="CircularBeadImageView">
+        <!--        是否显示为圆形（默认为矩形）-->
+        <attr name="CircularBeadIsCircle" format="boolean" />
+        <!--        统一设置四个角的圆角半径-->
+        <attr name="CircularBeadCornerRadius" format="dimension" />
+        <!--        左上角圆角半径-->
+        <attr name="CircularBeadCornerTopLeftRadius" format="dimension" />
+        <!--        右上角圆角半径-->
+        <attr name="CircularBeadCornerTopRightRadius" format="dimension" />
+        <!--        左下角圆角半径-->
+        <attr name="CircularBeadCornerBottomLeftRadius" format="dimension" />
+        <!--        右下角圆角半径-->
+        <attr name="CircularBeadCornerBottomRightRadius" format="dimension" />
+        <!--        边框宽度-->
+        <attr name="CircularBeadBorderWidth" format="dimension" />
+        <!--        边框颜色-->
+        <attr name="CircularBeadBorderColor" format="color" />
+        <!--        相当于内层边框（is_circle为true时支持）-->
+        <attr name="CircularBeadInnerBorderWidth" format="dimension" />
+        <!--        内边框颜色-->
+        <attr name="CircularBeadInnerBorderColor" format="color" />
+        <!--        边框，inner_border是否覆盖图片内容-->
+        <attr name="CircularBeadIsCoverSrc" format="boolean" />
+        <!--        图片上绘制的遮罩颜色-->
+        <attr name="CircularBeadMaskColor" format="color" />
+    </declare-styleable>
+
+</resources>

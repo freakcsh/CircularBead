@@ -1,4 +1,4 @@
-package com.freak.circularbeadimageview;
+package com.freak.circularbead.view.clippath;
 
 
 import android.content.Context;
@@ -7,7 +7,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PorterDuff;
@@ -24,24 +23,9 @@ import androidx.annotation.ColorInt;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
 
+import com.freak.circularbead.R;
 
-/**
- * 圆角imageView
- * <p>
- * 属性名	                    含义	                           默认值	                 对应方法
- * is_circle	           是否显示为圆形（默认为矩形）	               false	                isCircle（）
- * corner_top_left_radius	    左上角圆角半径 	                   0dp	                    setCornerTopLeftRadius（）
- * corner_top_right_radius  	右上角圆角半径	                   0dp	                    setCornerTopRightRadius（）
- * corner_bottom_left_radius	左下角圆角半径	                   0dp	                    setCornerBottomLeftRadius（）
- * corner_bottom_right_radius	右下角圆角半径	                   0dp	                    setCornerBottomRightRadius（）
- * corner_radius	            统一设置四个角的圆角半径	           0dp	                    setCornerRadius（）
- * BORDER_WIDTH	                边框宽度	                           0dp	                    setBorderWidth（）
- * border_color	                边框颜色	                           #FFFFFF	                setBorderColor（）
- * inner_border_width	        相当于内层边框（is_circle为true时支持）0dp	                    setInnerBorderWidth（）
- * inner_border_color	        内边框颜色	                       #FFFFFF	                setInnerBorderColor（）
- * is_cover_src	                边框，inner_border是否覆盖图片内容	   false	                isCoverSrc（）
- * mask_color	                图片上绘制的遮罩颜色	               不设置颜色则不绘制	        setMaskColor（）
- */
+
 public class CircularBeadImageView extends AppCompatImageView {
     private Context context;
 
@@ -104,29 +88,29 @@ public class CircularBeadImageView extends AppCompatImageView {
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.CircularBeadImageView, 0, 0);
         for (int i = 0; i < ta.getIndexCount(); i++) {
             int attr = ta.getIndex(i);
-            if (attr == R.styleable.CircularBeadImageView_is_cover_src) {
+            if (attr == R.styleable.CircularBeadImageView_CircularBeadIsCoverSrc) {
                 isCoverSrc = ta.getBoolean(attr, isCoverSrc);
-            } else if (attr == R.styleable.CircularBeadImageView_is_circle) {
+            } else if (attr == R.styleable.CircularBeadImageView_CircularBeadIsCircle) {
                 isCircle = ta.getBoolean(attr, isCircle);
-            } else if (attr == R.styleable.CircularBeadImageView_border_width) {
+            } else if (attr == R.styleable.CircularBeadImageView_CircularBeadBorderWidth) {
                 borderWidth = ta.getDimensionPixelSize(attr, borderWidth);
-            } else if (attr == R.styleable.CircularBeadImageView_border_color) {
+            } else if (attr == R.styleable.CircularBeadImageView_CircularBeadBorderColor) {
                 borderColor = ta.getColor(attr, borderColor);
-            } else if (attr == R.styleable.CircularBeadImageView_inner_border_width) {
+            } else if (attr == R.styleable.CircularBeadImageView_CircularBeadInnerBorderWidth) {
                 innerBorderWidth = ta.getDimensionPixelSize(attr, innerBorderWidth);
-            } else if (attr == R.styleable.CircularBeadImageView_inner_border_color) {
+            } else if (attr == R.styleable.CircularBeadImageView_CircularBeadInnerBorderColor) {
                 innerBorderColor = ta.getColor(attr, innerBorderColor);
-            } else if (attr == R.styleable.CircularBeadImageView_corner_radius) {
+            } else if (attr == R.styleable.CircularBeadImageView_CircularBeadCornerRadius) {
                 cornerRadius = ta.getDimensionPixelSize(attr, cornerRadius);
-            } else if (attr == R.styleable.CircularBeadImageView_corner_top_left_radius) {
+            } else if (attr == R.styleable.CircularBeadImageView_CircularBeadCornerTopLeftRadius) {
                 cornerTopLeftRadius = ta.getDimensionPixelSize(attr, cornerTopLeftRadius);
-            } else if (attr == R.styleable.CircularBeadImageView_corner_top_right_radius) {
+            } else if (attr == R.styleable.CircularBeadImageView_CircularBeadCornerTopRightRadius) {
                 cornerTopRightRadius = ta.getDimensionPixelSize(attr, cornerTopRightRadius);
-            } else if (attr == R.styleable.CircularBeadImageView_corner_bottom_left_radius) {
+            } else if (attr == R.styleable.CircularBeadImageView_CircularBeadCornerBottomLeftRadius) {
                 cornerBottomLeftRadius = ta.getDimensionPixelSize(attr, cornerBottomLeftRadius);
-            } else if (attr == R.styleable.CircularBeadImageView_corner_bottom_right_radius) {
+            } else if (attr == R.styleable.CircularBeadImageView_CircularBeadCornerBottomRightRadius) {
                 cornerBottomRightRadius = ta.getDimensionPixelSize(attr, cornerBottomRightRadius);
-            } else if (attr == R.styleable.CircularBeadImageView_mask_color) {
+            } else if (attr == R.styleable.CircularBeadImageView_CircularBeadMaskColor) {
                 maskColor = ta.getColor(attr, maskColor);
             }
         }

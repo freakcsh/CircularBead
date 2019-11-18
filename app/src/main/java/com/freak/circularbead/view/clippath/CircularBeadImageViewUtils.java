@@ -1,4 +1,4 @@
-package com.freak.circularbeadimageview;
+package com.freak.circularbead.view.clippath;
 
 
 import android.content.Context;

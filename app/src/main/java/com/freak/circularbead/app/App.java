@@ -34,6 +34,7 @@ import com.freak.httphelper.HttpMethods;
 import com.freak.httphelper.log.LogLevel;
 import com.freak.httphelper.log.LogUtil;
 
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -145,7 +146,6 @@ public class App extends MultiDexApplication {
             public void onActivityDestroyed(Activity activity) {
             }
         });
-
 
     }
 

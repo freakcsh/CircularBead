@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,62 +12,155 @@
     android:orientation="vertical"
     android:background="@color/color_black"
     tools:context=".MainActivity">
-
-    <com.freak.circularbeadimageview.CircularBeadImageView
-       android:id="@+id/image1"
+<!--圆形 默认背景遮罩色-->
+    <com.freak.circularbead.view.clippath.CircularBeadImageView
+        android:id="@+id/image1"
         android:layout_width="40pt"
         android:layout_height="40pt"
         android:layout_marginLeft="5pt"
         android:layout_marginTop="5pt"
-        app:corner_radius="5pt"
-        app:is_circle="true"
+        app:CircularBeadCornerRadius="5pt"
+        app:CircularBeadIsCircle="true"
         />
-
-    <com.freak.circularbeadimageview.CircularBeadImageView
+<!--圆形 设置背景遮罩色-->
+    <com.freak.circularbead.view.clippath.CircularBeadImageView
         android:layout_width="40pt"
         android:layout_height="40pt"
         android:layout_marginLeft="5pt"
         android:layout_marginTop="5pt"
-        app:corner_radius="10pt"
-        android:src="@mipmap/ic_splash"
-        app:is_circle="true" />
-
-    <com.freak.circularbeadimageview.CircularBeadImageView
-        android:layout_width="110pt"
-        android:layout_height="110pt"
+        app:CircularBeadCornerRadius="10pt"
+        app:CircularBeadIsCircle="true"
+        app:CircularBeadMaskColor="@color/colorPrimary"/>
+    <com.freak.circularbead.view.clippath.CircularBeadImageView
+        android:id="@+id/image2"
+        android:layout_width="80pt"
+        android:layout_height="80pt"
         android:layout_marginLeft="5pt"
         android:layout_marginTop="5pt"
-        app:corner_bottom_left_radius="5pt"
-        app:corner_bottom_right_radius="5pt"
-        app:corner_radius="10pt"
-        app:corner_top_right_radius="5pt"
-        app:is_circle="false"
-        android:src="@color/colorPrimary"
-        />
-
-    <com.freak.circularbeadimageview.CircularBeadImageView
+        app:CircularBeadCornerRadius="10pt"
+        app:CircularBeadIsCircle="true"
+        app:CircularBeadInnerBorderColor="@color/colorPrimary"
+        app:CircularBeadInnerBorderWidth="2pt"
+        app:CircularBeadIsCoverSrc="true"
+        app:CircularBeadMaskColor="@color/color_white"/>
+<!-- 弧形-->
+    <com.freak.circularbead.view.clippath.CircularBeadImageView
+        android:layout_width="50pt"
+        android:layout_height="50pt"
+        android:layout_marginLeft="5pt"
+        android:layout_marginTop="5pt"
+        app:CircularBeadCornerBottomLeftRadius="5pt"
+        app:CircularBeadCornerBottomRightRadius="5pt"
+        app:CircularBeadCornerRadius="10pt"
+        app:CircularBeadCornerTopRightRadius="5pt"
+        app:CircularBeadIsCircle="false" />
+    <!-- 不同边角弧形-->
+    <com.freak.circularbead.view.clippath.CircularBeadImageView
         android:id="@+id/image_view_collect_commodity_item_photo"
-        android:layout_width="110pt"
-        android:layout_height="110pt"
+        android:layout_width="50pt"
+        android:layout_height="50pt"
         android:layout_marginLeft="12pt"
         android:layout_marginTop="5pt"
-        app:corner_bottom_left_radius="5pt"
-        app:corner_top_left_radius="5pt"
-        app:corner_top_right_radius="15pt"
-        android:src="@drawable/imageqq"
-        app:is_circle="false"/>
+        app:CircularBeadCornerBottomLeftRadius="5pt"
+        app:CircularBeadCornerTopLeftRadius="5pt"
+        app:CircularBeadCornerTopRightRadius="15pt"
+        app:CircularBeadIsCircle="false" />
 
-    <com.freak.circularbeadimageview.CircularBeadImageView
+    <com.freak.circularbead.view.clippath.CircularBeadImageView
         android:id="@+id/image_view_add_to_shopping_cart_bg"
-        android:layout_width="110pt"
-        android:layout_height="110pt"
+        android:layout_width="50pt"
+        android:layout_height="50pt"
         android:layout_marginLeft="13pt"
         android:layout_marginTop="5pt"
         android:layout_marginBottom="14pt"
-        app:corner_radius="5dp" />
-    <com.freak.circularbeadimageview.CircularBeadView
-        android:layout_width="80pt"
-        android:layout_height="80pt"
-        android:src="@drawable/imageqq"/>
+        app:CircularBeadCornerRadius="5dp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <com.freak.circularbead.view.bitmapshader.CircularBeadBitmapShaderImageView
+        android:layout_width="50pt"
+        android:layout_height="50pt"
+        android:layout_marginLeft="5pt"
+        app:bitmapShaderCorners="10pt"
+        android:src="@drawable/ic_splash" />
+
+    <com.freak.circularbeadimageview.CircularBeadClipPathImageView
+        android:id="@+id/clip_path_image"
+        android:layout_width="200pt"
+        android:layout_height="200pt"
+        app:clipPathBottomLeftRadius="5pt"
+        app:clipPathBottomRightRadius="5pt"
+        app:clipPathTopLeftRadius="50pt"
+        app:clipPathTopRightRadius="10pt"
+        android:layout_marginLeft="5pt"
+        android:layout_marginTop="5pt"
+        app:clipPathCorners="10pt"
+        android:src="@drawable/ic_splash"
+        app:clipPathIsCircularImageView="true"
+        app:clipPathPaintColor="@color/color_white"
+        />
+    <com.freak.circularbeadimageview.CircularBeadClipPathImageView
+        android:id="@+id/clip_path_image1"
+        android:layout_width="200pt"
+        android:layout_height="200pt"
+        app:clipPathBottomLeftRadius="5pt"
+        app:clipPathBottomRightRadius="5pt"
+        app:clipPathTopLeftRadius="50pt"
+        app:clipPathTopRightRadius="10pt"
+        android:layout_marginLeft="5pt"
+        android:layout_marginTop="5pt"
+        app:clipPathCorners="20pt"
+        android:src="@drawable/ic_splash"
+        app:clipPathIsCircularImageView="false"
+        app:clipPathPaintColor="@color/color_white"
+        />
+    <com.freak.circularbeadimageview.CircularBeadClipPathImageView
+        android:id="@+id/clip_path_image3"
+        android:layout_width="200pt"
+        android:layout_height="200pt"
+        app:clipPathBottomLeftRadius="5pt"
+        app:clipPathBottomRightRadius="5pt"
+        app:clipPathTopLeftRadius="50pt"
+        app:clipPathTopRightRadius="10pt"
+        android:layout_marginLeft="5pt"
+        android:layout_marginTop="5pt"
+        android:src="@drawable/ic_splash"
+        app:clipPathIsCircularImageView="false"
+        app:clipPathPaintColor="@color/color_white"
+        />
+    <com.freak.circularbeadimageview.CircularBeadClipPathImageView
+        android:id="@+id/clip_path_image4"
+        android:layout_width="50pt"
+        android:layout_height="50pt"
+        app:clipPathBottomLeftRadius="5pt"
+        app:clipPathBottomRightRadius="5pt"
+        app:clipPathTopLeftRadius="10pt"
+        app:clipPathTopRightRadius="10pt"
+        android:layout_marginLeft="5pt"
+        android:layout_marginTop="5pt"
+        android:src="@drawable/ic_splash"
+        app:clipPathIsCircularImageView="false"
+        app:clipPathPaintColor="@color/color_white"
+        />
 
 </LinearLayout>
+</androidx.core.widget.NestedScrollView>
