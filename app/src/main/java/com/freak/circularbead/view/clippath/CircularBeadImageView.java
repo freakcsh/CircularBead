@@ -159,6 +159,7 @@ public class CircularBeadImageView extends AppCompatImageView {
         super.onDraw(canvas);
         paint.reset();
         path.reset();
+        srcPath.reset();
         if (getDrawable() != null) {
             Bitmap bitmap = drawableToBitmap(getDrawable());
             bitmapShader = new BitmapShader(bitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
