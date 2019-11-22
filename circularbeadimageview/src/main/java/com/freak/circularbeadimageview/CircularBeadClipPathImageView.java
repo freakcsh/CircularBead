@@ -36,14 +36,7 @@ public class CircularBeadClipPathImageView extends AppCompatImageView {
     private boolean isCircularImageView = false;
     private int clipPathPaintColor = Color.WHITE;
     private Paint paint;
-    private final Matrix mShaderMatrix = new Matrix();
-    private int mBitmapWidth;
-    private int mBitmapHeight;
-    private BitmapShader mBitmapShader;
-    private final RectF mDrawableRect = new RectF();
-    private final RectF mBorderRect = new RectF();
-    private static final int COLOR_DRAWABLE_DIMENSION = 2;
-    private static final Bitmap.Config BITMAP_CONFIG = Bitmap.Config.ARGB_8888;
+
 
     public CircularBeadClipPathImageView(Context context) {
         this(context, null);
@@ -79,9 +72,6 @@ public class CircularBeadClipPathImageView extends AppCompatImageView {
             }
         }
         typedArray.recycle();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            setOutlineProvider(new OutlineProvider());
-        }
         path = new Path();
         paint = new Paint();
         paint.setAntiAlias(true);
@@ -147,86 +137,7 @@ public class CircularBeadClipPathImageView extends AppCompatImageView {
                 canvas.clipPath(path);
             }
         }
-
         super.onDraw(canvas);
     }
 
-    private RectF calculateBounds() {
-        int availableWidth = getWidth() - getPaddingLeft() - getPaddingRight();
-        int availableHeight = getHeight() - getPaddingTop() - getPaddingBottom();
-
-        int sideLength = Math.min(availableWidth, availableHeight);
-
-        float left = getPaddingLeft() + (availableWidth - sideLength) / 2f;
-        float top = getPaddingTop() + (availableHeight - sideLength) / 2f;
-
-        return new RectF(left, top, left + sideLength, top + sideLength);
-    }
-
-    /**
-     * drawable转bitmap
-     *
-     * @param drawable
-     * @return
-     */
-    private Bitmap getBitmapFromDrawable(Drawable drawable) {
-        if (drawable == null) {
-            return null;
-        }
-
-        if (drawable instanceof BitmapDrawable) {
-            return ((BitmapDrawable) drawable).getBitmap();
-        }
-
-        try {
-            Bitmap bitmap;
-
-            if (drawable instanceof ColorDrawable) {
-                bitmap = Bitmap.createBitmap(COLOR_DRAWABLE_DIMENSION, COLOR_DRAWABLE_DIMENSION, BITMAP_CONFIG);
-            } else {
-                bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), BITMAP_CONFIG);
-            }
-
-            Canvas canvas = new Canvas(bitmap);
-            drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
-            drawable.draw(canvas);
-            return bitmap;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    private class OutlineProvider extends ViewOutlineProvider {
-
-        @Override
-        public void getOutline(View view, Outline outline) {
-            Rect bounds = new Rect();
-            mBorderRect.roundOut(bounds);
-            outline.setRoundRect(bounds, bounds.width() / 2.0f);
-        }
-
-    }
-
-    private void updateShaderMatrix() {
-        float scale;
-        float dx = 0;
-        float dy = 0;
-
-        mShaderMatrix.set(null);
-
-        if (mBitmapWidth * mDrawableRect.height() > mDrawableRect.width() * mBitmapHeight) {
-            scale = mDrawableRect.height() / (float) mBitmapHeight;
-            dx = (mDrawableRect.width() - mBitmapWidth * scale) * 0.5f;
-        } else {
-            scale = mDrawableRect.width() / (float) mBitmapWidth;
-            dy = (mDrawableRect.height() - mBitmapHeight * scale) * 0.5f;
-        }
-
-        mShaderMatrix.setScale(scale, scale);
-        mShaderMatrix.postTranslate((int) (dx + 0.5f) + mDrawableRect.left, (int) (dy + 0.5f) + mDrawableRect.top);
-
-        mBitmapShader.setLocalMatrix(mShaderMatrix);
-    }
 }

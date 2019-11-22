@@ -114,7 +114,7 @@
         android:layout_marginLeft="5pt"
         android:layout_marginTop="5pt"
         app:clipPathCorners="10pt"
-        android:src="@drawable/ic_splash"
+        android:src="@drawable/imageqq"
         app:clipPathIsCircularImageView="true"
         app:clipPathPaintColor="@color/color_white"
         />

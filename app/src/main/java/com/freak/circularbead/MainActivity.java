@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         Glide.with(this).load(getDrawableUrl(R.drawable.ic_splash)).thumbnail(0.1f).into(imageViewCollectCommodityItemPhoto);
         Glide.with(this).load(getDrawableUrl(R.drawable.ic_splash)).thumbnail(0.1f).into(clipPathImage);
         Glide.with(this).load(getDrawableUrl(R.drawable.ic_splash)).thumbnail(0.1f).into(image2);
+        Glide.with(this).load(getDrawableUrl(R.drawable.imageqq)).thumbnail(0.1f).into(clipPathImage);
         Glide.with(this).load(getDrawableUrl(R.drawable.imageqq)).thumbnail(0.1f).into(image1);
     }
 
